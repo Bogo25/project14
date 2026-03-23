@@ -1,5 +1,8 @@
 //Author: Bogomil M. Iliev
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Application {
@@ -11,7 +14,8 @@ public class Application {
         while (!input[0].equalsIgnoreCase("exit")) {
             switch (input[0].toLowerCase()) {
                 case "help":
-//                    File help = new File("help");
+                    System.out.println(getHelp());
+                    break;
                 case "save":
                     ;
                 case "save as":
@@ -38,6 +42,8 @@ public class Application {
                     ;
                 case "reg":
                     ;
+                default:
+                    System.out.println("Invalid command");
             }
 
 
@@ -45,6 +51,14 @@ public class Application {
 
             System.out.print("NFA> ");
             input = sc.nextLine().split(" ");
+        }
+    }
+
+    public static String getHelp() {
+        try {
+            return Files.readString(Paths.get(System.getProperty("user.dir"),"src","help"));
+        } catch (IOException e) {
+            return e.getMessage();
         }
     }
 }

@@ -1,0 +1,35 @@
+Usage: nfa [FILE ...]
+
+Options:
+    help                    Print this help text and exit
+    reg REGEX               Creates an automaton based on
+                            the regular expression.
+                            (constraints: integers and
+                            lowercase latin letters)
+    save ID FILE            Save the automaton in the file
+    open FILE [FILE ...]    Load the listed automatons in
+                            the listed automatons
+    close ID [ID ...]       Remove automatons from memory
+    close *                 Removes all automatons from
+                            memory
+    list                    Lists all automatons in memory
+    print ID                Prints all transitions of said
+                            automaton
+    empty ID                Checks if the automaton's
+                            language is empty
+    deterministic ID        Checks if the automaton is
+                            deterministic
+    recognize ID word       Returns true if the automaton
+                            recognizes the word
+    concat ID ID [ID ...]   Creates new automaton that is
+                            concatenation of all listed
+                            automatons. Order is important -
+                            second automaton is concatenated
+                            to the first and so on.
+    union ID ID [ID ...]    Creates a new automaton that
+                            is the union of all listed
+                            automatons
+    un ID                   Creates an automaton that is
+                            applied Kleene plus on
+                            said automaton
+    exit                    Exits the program
