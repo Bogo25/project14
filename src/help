@@ -4,8 +4,11 @@ Options:
     help                    Print this help text and exit
     reg REGEX               Creates an automaton based on
                             the regular expression.
-                            (constraints: integers and
-                            lowercase latin letters)
+                            Constraints: alphabet contains integers and
+                            lowercase latin letters; for Kleene
+                            star is * used, parentheses are allowed,
+                            + is used for alternatives and '/' is used
+                            for empty string.
     save ID FILE            Save the automaton in the file
     open FILE [FILE ...]    Load the listed automatons in
                             the listed automatons
