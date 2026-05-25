@@ -2,37 +2,27 @@ Usage: nfa [FILE ...]
 
 Options:
     help                    Print this help text and exit
-    reg REGEX               Creates an automaton based on
-                            the regular expression.
+    reg REGEX               Creates an automaton based on the regular expression.
                             Constraints: alphabet contains integers and
-                            lowercase latin letters; for Kleene
-                            star is * used, parentheses are allowed,
-                            + is used for alternatives and '/' is used
-                            for empty string.
+                            lowercase latin letters; for Kleene star is * used,
+                            parentheses are allowed, + is used for alternatives
+                            and / is used for empty string.
     save ID FILE            Save the automaton in the file
-    open FILE [FILE ...]    Load the listed automatons in
-                            the listed automatons
+    open FILE [FILE ...]    Load the listed automatons
     close ID [ID ...]       Remove automatons from memory
-    close *                 Removes all automatons from
-                            memory
+    close *                 Remove all automatons from memory
     list                    Lists all automatons in memory
-    print ID                Prints all transitions of said
-                            automaton
-    empty ID                Checks if the automaton's
-                            language is empty
-    deterministic ID        Checks if the automaton is
-                            deterministic
-    recognize ID word       Returns true if the automaton
-                            recognizes the word
-    concat ID ID [ID ...]   Creates new automaton that is
-                            concatenation of all listed
-                            automatons. Order is important -
-                            second automaton is concatenated
-                            to the first and so on.
-    union ID ID [ID ...]    Creates a new automaton that
-                            is the union of all listed
-                            automatons
-    un ID                   Creates an automaton that is
-                            applied Kleene plus on
-                            said automaton
+    print ID                Prints all transitions of said automaton in table form
+    empty ID                Checks if the automaton's language is empty
+    deterministic ID        Checks if the automaton is deterministic
+    recognize ID WORD       Returns true if the automaton recognizes the word.
+                            Use / for the empty word.
+    concat ID ID [ID ...]   Creates new automaton that is concatenation of all
+                            listed automatons. Order is important.
+    union ID ID [ID ...]    Creates a new automaton that is the union of all
+                            listed automatons
+    un ID                   Creates an automaton that is positive closure
+                            of said automaton
+    finite ID               Checks if the automaton's language is finite
+    determinize ID          Creates a deterministic automaton equivalent to ID
     exit                    Exits the program
